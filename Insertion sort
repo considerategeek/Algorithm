@@ -1,4 +1,3 @@
-__author__ = 'shreyash'
 x=map(int,raw_input().split())
 for i in range(len(x)):
     j=i
