@@ -1,0 +1,9 @@
+__author__ = 'shreyash'
+x=map(int,raw_input().split())
+for i in range(len(x)):
+    j=i
+    while j>0:
+        if x[j]<x[j-1]:
+            x[j-1],x[j]=x[j],x[j-1]
+        j-=1
+print x
