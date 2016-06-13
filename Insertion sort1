@@ -1,0 +1,9 @@
+__author__ = 'shreyash'
+y=map(int,raw_input('Give Your inputs separated by space\n').split())
+for i in range(1,len(y)):
+    j=i
+    while j>0 and y[j]<y[j-1]:
+
+        y[j],y[j-1]=y[j-1],y[j]
+        j-=1
+print ','.join(map(str,y))
