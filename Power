@@ -1,0 +1,10 @@
+number=map(int,raw_input("Give your Numbers in a line separated by space\n").split())
+def power(x,y):
+    if y==0:
+        return 1
+    temp=power(x,y/2)
+    if y%2==0:
+        return temp*temp
+    else:
+        return x*temp*temp
+print power(number[0],number[1])
