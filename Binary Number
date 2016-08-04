@@ -1,0 +1,8 @@
+def binary(num):
+    l=[]
+    while num>0:
+        l.append(str(num%2))
+        num = num//2
+    l.reverse()
+    return ("").join(l)
+print binary(int(raw_input("Give You Number\n")))
