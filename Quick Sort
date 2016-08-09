@@ -1,0 +1,19 @@
+def quicksort(arr,l,r):
+    if l<r:
+        pivot=partition(arr,l,r)
+        quicksort(arr,l,pivot-1)
+        quicksort(arr,pivot+1,r)
+
+def partition(arr,l,r):
+    x=arr[r]
+    i=l-1
+    for j in range(l,r):
+        if arr[j]<=x:
+            i=i+1
+            arr[i],arr[j]=arr[j],arr[i]
+
+    arr[i+1],arr[r]=arr[r],arr[i+1]
+    return i+1
+array=map(int,raw_input("Give the array to be sorted separated by space\n").split())
+quicksort(array,0,len(array)-1)
+print array
