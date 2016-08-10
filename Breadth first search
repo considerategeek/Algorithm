@@ -1,0 +1,25 @@
+for i in range(int(raw_input())):
+    adj={}
+    final=[]
+    num=map(int,raw_input().split())
+    for i in range(1,num[0]+1):
+        adj[i]=[]
+    for i in range(num[1]):
+        edge=map(int,raw_input().split())
+        adj[edge[0]].append(edge[1])
+        adj[edge[1]].append(edge[0])
+    source=int(raw_input())
+    level={source:0}
+    parent={source:None}
+    i=1
+    front=[source]
+    while front:
+        next=[]
+        for u in front:
+            for v in adj[u]:
+                if v not in level:
+                    level[v]=i
+                    parent[v]=u
+                    next.append(v)
+        front=next
+        i+=1
