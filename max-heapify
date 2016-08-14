@@ -1,0 +1,12 @@
+def MAX_HEAPIFY(A,i):
+    l=left(i)
+    r=right(i)
+    if l<=heapsize and A[i-1]<A[l-1]:
+        largest=l
+    else:
+        largest=i
+    if r<=heapsize and A[largest-1]<A[r-1]:
+        largest=r
+    if largest!=i:
+        A[largest-1],A[i-1]=A[i-1],A[largest-1]
+        MAX_HEAPIFY(A,largest)
